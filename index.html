@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samridhi Pratap ✦ Official Fan Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rose: #e8738a;
+    --blush: #f5c2ce;
+    --deep: #1a0a10;
+    --cream: #fdf6f0;
+    --gold: #c9a96e;
+    --soft-pink: #fde8ed;
+    --text: #2d1520;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; background: var(--deep); max-width: 100vw; overflow-x: hidden; }
+
+  body {
+    background: var(--deep);
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+    max-width: 100vw;
+    cursor: none;
+    margin: 20px; /* Layout margin applied precisely here */
+  }
+
+  /* Custom Cursor */
+  .cursor {
+    position: fixed;
+    width: 12px; height: 12px;
+    background: var(--rose);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s, width 0.2s, height 0.2s, background 0.2s;
+  }
+  .cursor-ring {
+    position: fixed;
+    width: 36px; height: 36px;
+    border: 1.5px solid var(--blush);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease-out, width 0.3s, height 0.3s;
+    opacity: 0.6;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: calc(100vh - 40px); /* Offset to maintain viewport layout with margin */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, #3d0e1f 0%, #1a0a10 60%),
+                radial-gradient(ellipse at 80% 20%, #2a0d1a 0%, transparent 60%);
+  }
+
+  .hero-noise {
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.4;
+  }
+
+  /* Floating petals */
+  .petal {
+    position: absolute;
+    width: 6px; height: 10px;
+    background: var(--rose);
+    border-radius: 50% 0 50% 0;
+    opacity: 0;
+    animation: floatPetal linear infinite;
+  }
+  @keyframes floatPetal {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.3; }
+    100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+    width: 90%;
+    padding: 40px 0;
+  }
+
+  .hero-photo-wrap {
+    position: relative;
+    animation: fadeSlideLeft 1s ease forwards;
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  @keyframes fadeSlideLeft {
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .hero-photo-frame {
+    position: relative;
+    width: 380px;
+    height: 480px;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .hero-photo-frame::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    background: linear-gradient(135deg, var(--gold), var(--rose), var(--blush), var(--gold));
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: rotateBorder 8s linear infinite;
+    z-index: -1;
+  }
+  @keyframes rotateBorder {
+    to { filter: hue-rotate(30deg); }
+  }
+
+  .hero-photo-frame::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background: var(--deep);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    z-index: 0;
+  }
+
+  .hero-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: relative;
+    z-index: 1;
+    filter: contrast(1.05) saturate(1.1);
+  }
+
+  .hero-badge {
+    position: absolute;
+    bottom: 20px;
+    right: -10px;
+    background: linear-gradient(135deg, var(--rose), #c0365a);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    z-index: 2;
+    box-shadow: 0 8px 30px rgba(232, 115, 138, 0.4);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  .hero-text {
+    animation: fadeSlideRight 1s ease 0.2s forwards;
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  @keyframes fadeSlideRight {
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 6vw, 80px);
+    font-weight: 900;
+    line-height: 0.95;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #fff 0%, var(--blush) 50%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--blush);
+    margin-bottom: 28px;
+    opacity: 0.85;
+  }
+
+  .fire-tag {
+    display: inline-block;
+    background: rgba(232, 115, 138, 0.15);
+    border: 1px solid rgba(232, 115, 138, 0.3);
+    color: var(--rose);
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+
+  .hero-bio {
+    font-size: 15px;
+    line-height: 1.8;
+    color: rgba(253, 246, 240, 0.7);
+    max-width: 440px;
+    margin-bottom: 40px;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--rose), #c0365a);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 30px rgba(232, 115, 138, 0.35);
+    border: none;
+    cursor: none;
+    max-width: 100%;
+    justify-content: center;
+  }
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 40px rgba(232, 115, 138, 0.5);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--cream);
+    padding: 16px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    border: 1px solid rgba(253, 246, 240, 0.25);
+    transition: all 0.3s ease;
+    cursor: none;
+    max-width: 100%;
+    justify-content: center;
+  }
+  .btn-secondary:hover {
+    background: rgba(253, 246, 240, 0.06);
+    border-color: rgba(253, 246, 240, 0.4);
+    transform: translateY(-3px);
+  }
+
+  /* STATS */
+  .stats-bar {
+    background: rgba(255,255,255,0.03);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 40px 0;
+  }
+  .stats-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .stat-item {
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--rose), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+  }
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(253, 246, 240, 0.45);
+    margin-top: 6px;
+  }
+
+  /* GALLERY */
+  .section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 5%;
+  }
+
+  .section-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--gold), transparent);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.1;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  .section-desc {
+    font-size: 15px;
+    color: rgba(253, 246, 240, 0.55);
+    max-width: 520px;
+    line-height: 1.8;
+    margin-bottom: 60px;
+  }
+
+  /* Mosaic gallery */
+  .gallery-mosaic {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, 220px);
+    gap: 12px;
+  }
+
+  .gallery-item {
+    overflow: hidden;
+    border-radius: 12px;
+    position: relative;
+    cursor: none;
+  }
+
+  .gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26, 10, 16, 0.7) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .gallery-item:hover::after { opacity: 1; }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .gallery-item:hover img { transform: scale(1.06); }
+
+  .g1 { grid-column: 1 / 5; grid-row: 1 / 3; }
+  .g2 { grid-column: 5 / 9; grid-row: 1 / 2; }
+  .g3 { grid-column: 9 / 13; grid-row: 1 / 2; }
+  .g4 { grid-column: 5 / 8; grid-row: 2 / 4; }
+  .g5 { grid-column: 8 / 13; grid-row: 2 / 4; }
+  .g6 { grid-column: 1 / 5; grid-row: 3 / 4; }
+
+  /* PERSONALITY */
+  .personality-section {
+    background: linear-gradient(135deg, rgba(232, 115, 138, 0.08) 0%, rgba(201, 169, 110, 0.05) 100%);
+    border: 1px solid rgba(232, 115, 138, 0.12);
+    border-radius: 24px;
+    padding: 80px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 100px;
+  }
+
+  .personality-section::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 40px;
+    font-family: 'Playfair Display', serif;
+    font-size: 280px;
+    color: var(--rose);
+    opacity: 0.06;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .trait-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+  }
+
+  .trait-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 32px 28px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .trait-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--rose), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .trait-card:hover::before { transform: scaleX(1); }
+  .trait-card:hover {
+    background: rgba(232, 115, 138, 0.07);
+    border-color: rgba(232, 115, 138, 0.2);
+    transform: translateY(-4px);
+  }
+
+  .trait-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  .trait-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--blush);
+  }
+  .trait-desc {
+    font-size: 13px;
+    line-height: 1.8;
+    color: rgba(253, 246, 240, 0.55);
+  }
+
+  /* SUPPORT */
+  .support-section {
+    text-align: center;
+    padding: 100px 5%;
+    position: relative;
+  }
+  .support-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(232, 115, 138, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .support-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 900px;
+    margin: 60px auto 0;
+  }
+
+  .support-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 20px;
+    padding: 44px 30px;
+    transition: all 0.35s ease;
+    cursor: none;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .support-card:hover {
+    background: rgba(232, 115, 138, 0.1);
+    border-color: rgba(232, 115, 138, 0.3);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(232, 115, 138, 0.15);
+  }
+
+  .support-icon {
+    width: 60px; height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin: 0 auto 20px;
+  }
+  .support-icon.pink { background: rgba(232, 115, 138, 0.15); }
+  .support-icon.gold { background: rgba(201, 169, 110, 0.15); }
+  .support-icon.purple { background: rgba(180, 130, 220, 0.15); }
+
+  .support-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .support-text {
+    font-size: 13px;
+    color: rgba(253, 246, 240, 0.5);
+    line-height: 1.7;
+  }
+
+  /* INSTAGRAM CTA */
+  .insta-cta {
+    max-width: 1200px;
+    margin: 0 auto 120px;
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .insta-text .section-title { margin-bottom: 20px; }
+
+  .insta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--cream);
+    font-size: 16px;
+    margin-top: 32px;
+    padding: 20px 36px;
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 30px rgba(253, 29, 29, 0.3);
+  }
+  .insta-link:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 50px rgba(253, 29, 29, 0.45);
+  }
+
+  .insta-visual {
+    position: relative;
+    height: 400px;
+  }
+
+  .photo-stack {
+    position: relative;
+    height: 100%;
+  }
+
+  .stack-img {
+    position: absolute;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .stack-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
+  .stack-1 { width: 220px; height: 280px; top: 10px; left: 0; transform: rotate(-6deg); z-index: 1; }
+  .stack-2 { width: 200px; height: 260px; top: 60px; left: 160px; transform: rotate(3deg); z-index: 2; }
+  .stack-3 { width: 180px; height: 240px; top: 20px; right: 10px; transform: rotate(-2deg); z-index: 3; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 50px 5%;
+    text-align: center;
+    position: relative;
+  }
+
+  .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--rose), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 12px;
+  }
+
+  .footer-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: rgba(253, 246, 240, 0.4);
+    margin-bottom: 30px;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .footer-link {
+    color: rgba(253, 246, 240, 0.4);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .footer-link:hover { color: var(--rose); }
+
+  .footer-bottom {
+    margin-top: 40px;
+    font-size: 11px;
+    color: rgba(253, 246, 240, 0.2);
+    letter-spacing: 1px;
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--deep); }
+  ::-webkit-scrollbar-thumb { background: var(--rose); border-radius: 10px; }
+
+  /* ANIMATIONS */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Nav */
+  nav {
+    position: fixed;
+    top: 20px; left: 20px; right: 20px; /* Adjusted fixed positions to snap nicely with layout margins */
+    z-index: 100;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(26, 10, 16, 0.95) 0%, transparent 100%);
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--rose), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(253, 246, 240, 0.6);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--rose); }
+
+  .nav-follow {
+    background: linear-gradient(135deg, var(--rose), #c0365a);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(232, 115, 138, 0.3);
+  }
+  .nav-follow:hover {
+    box-shadow: 0 8px 30px rgba(232, 115, 138, 0.5);
+    transform: translateY(-2px);
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    body { margin: 10px; max-width: calc(100vw - 20px); }
+    .hero { min-height: calc(100vh - 20px); }
+    nav { top: 10px; left: 10px; right: 10px; }
+    .hero-content { grid-template-columns: 1fr; gap: 40px; text-align: center; width: 100%; }
+    .hero-eyebrow { justify-content: center; }
+    .hero-eyebrow::before { display: none; }
+    .hero-cta { justify-content: center; width: 100%; }
+    .btn-primary, .btn-secondary { width: 100%; }
+    .hero-photo-frame { width: 280px; height: 360px; }
+    .gallery-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .g1, .g2, .g3, .g4, .g5, .g6 { grid-column: auto; grid-row: auto; height: 200px; width: 100%; }
+    .trait-grid { grid-template-columns: 1fr; }
+    .support-cards { grid-template-columns: 1fr; }
+    .insta-cta { grid-template-columns: 1fr; }
+    .insta-visual { display: none; }
+    .personality-section { padding: 40px 30px; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Floating Petals -->
+<div id="petals"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Samridhi ✦</a>
+  <ul class="nav-links">
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#support">Support</a></li>
+  </ul>
+  <a href="https://www.instagram.com/samridhipratapp?igsh=OHNtNXVqdDloenN2" target="_blank" class="nav-follow">Follow ✦</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-noise"></div>
+  <div class="hero-content">
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-frame">
+        <img src="IMG_3136.jpg" alt="Samridhi Pratap" class="hero-photo">
+      </div>
+      <div class="hero-badge">✦ She's Iconic</div>
+    </div>
+    <div class="hero-text">
+      <div class="hero-eyebrow">Official Fan Page</div>
+      <h1 class="hero-name">Samridhi<br>Pratap</h1>
+      <div class="hero-subtitle">Bold. Beautiful. Unapologetically Her.</div>
+      <div class="fire-tag">🔥 Short-Tempered.</div>
+      <p class="hero-bio">
+        She walks into a room and the temperature changes — in every sense. 
+        Samridhi doesn't do average. She's the girl who'll charm you with one glance 
+        and roast you with the next. Follow along for real moments, gorgeous fits, 
+        and absolutely zero filters on her personality.
+      </p>
+      <div class="hero-cta">
+        <a href="https://www.instagram.com/samridhipratapp?igsh=OHNtNXVqdDloenN2" target="_blank" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          Follow on Instagram
+        </a>
+        <a href="#gallery" class="btn-secondary">View Gallery →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-num" data-target="65">0</span>
+      <span class="stat-label">Followers</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num" data-target="50">0</span>
+      <span class="stat-label">Posts</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num" data-target="1">0</span>
+      <span class="stat-label">Years Creating</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num" data-target="100">0</span>
+      <span class="stat-label">% Authentic</span>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="section" id="gallery">
+  <div class="reveal">
+    <div class="section-label">Captured Moments</div>
+    <h2 class="section-title">Her <em>World,</em><br>Your Feed.</h2>
+    <p class="section-desc">Every frame tells a story — from café afternoons to Diwali nights, from power outfits to candid moments she didn't plan but we're all glad happened.</p>
+  </div>
+  <div class="gallery-mosaic reveal">
+    <div class="gallery-item g1"><img src="IMG_3137.jpg" alt="Samridhi at café"></div>
+    <div class="gallery-item g2"><img src="IMG_3138.jpg" alt="Samridhi at CaratLane"></div>
+    <div class="gallery-item g3"><img src="IMG_3139.jpg" alt="Samridhi outdoor"></div>
+    <div class="gallery-item g4"><img src="IMG_3140.jpg" alt="Samridhi in floral suit"></div>
+    <div class="gallery-item g5"><img src="IMG_3141.jpg" alt="Samridhi Diwali"></div>
+    <div class="gallery-item g6"><img src="IMG_3142.jpg" alt="Samridhi blue suit"></div>
+  </div>
+</section>
+
+<!-- PERSONALITY -->
+<section class="section" id="about">
+  <div class="personality-section reveal">
+    <div class="section-label">Who She Is</div>
+    <h2 class="section-title">Fire in a <em>Dupatta.</em></h2>
+    <p style="color: rgba(253,246,240,0.6); font-size:15px; line-height:1.8; max-width: 600px;">
+      She'll wear a delicate floral suit and a scowl at the same time — and somehow it's the most beautiful thing you've ever seen. Samridhi is art, attitude, and a little bit of chaos wrapped in incredible style.
+    </p>
+    <div class="trait-grid">
+      <div class="trait-card">
+        <div class="trait-icon">🔥</div>
+        <div class="trait-title">Fiery & Direct</div>
+        <div class="trait-desc">She doesn't sugarcoat. If something's wrong, you'll know — and honestly, that kind of honesty is rare and worth following.</div>
+      </div>
+      <div class="trait-card">
+        <div class="trait-icon">💎</div>
+        <div class="trait-title">Effortlessly Stylish</div>
+        <div class="trait-desc">From Dolce & Gabbana sunnies with ethnic jewellery to a denim jacket at a café — she makes every outfit look intentional and iconic.</div>
+      </div>
+      <div class="trait-card">
+        <div class="trait-icon">🌸</div>
+        <div class="trait-title">Secretly Soft</div>
+        <div class="trait-desc">Yes, she's short-tempered. And also the girl kissing a lavender bunny plush in the park. The duality is real and we're obsessed.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT -->
+<section class="support-section" id="support">
+  <div class="reveal">
+    <div class="section-label" style="justify-content: center;">Show Some Love</div>
+    <h2 class="section-title">Support <em>Samridhi</em></h2>
+    <p class="section-desc" style="margin: 0 auto;">She puts herself out there every day. Here's how you can be part of her journey and help her grow.</p>
+  </div>
+  <div class="support-cards reveal">
+    <a href="https://www.instagram.com/samridhipratapp?igsh=OHNtNXVqdDloenN2" target="_blank" class="support-card">
+      <div class="support-icon pink">📸</div>
+      <div class="support-title">Follow & Engage</div>
+      <div class="support-text">Like, comment, share — every interaction pushes her content to new audiences. Be the reason someone discovers her today.</div>
+    </a>
+    <div class="support-card" onclick="handleDM()">
+      <div class="support-icon gold">💌</div>
+      <div class="support-title">Send Fan Love</div>
+      <div class="support-text">Drop her a DM on Instagram. Genuine messages from fans mean the world. Tell her what you love about her content!</div>
+    </div>
+    <div class="support-card" onclick="handleShare()">
+      <div class="support-icon purple">🚀</div>
+      <div class="support-title">Share Her Page</div>
+      <div class="support-text">Share this fan page with friends who'd vibe with Samridhi's energy. Help build a community that matches her level.</div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM CTA -->
+<div class="insta-cta">
+  <div class="insta-text reveal">
+    <div class="section-label">Find Her</div>
+    <h2 class="section-title">She's on<br><em>Instagram</em></h2>
+    <p style="color: rgba(253,246,240,0.55); font-size:15px; line-height:1.8; margin-top:16px;">
+      Stories, reels, candid snaps — the real Samridhi lives on Instagram. 
+      Follow <strong style="color:var(--blush)">@samridhipratapp</strong> for daily doses 
+      of looks, life and unfiltered opinions.
+    </p>
+    <a href="https://www.instagram.com/samridhipratapp?igsh=OHNtNXVqdDloenN2" target="_blank" class="insta-link">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+      @samridhipratapp
+    </a>
+  </div>
+  <div class="insta-visual reveal">
+    <div class="photo-stack">
+      <div class="stack-img stack-1"><img src="IMG_3144.jpg" alt="Samridhi"></div>
+      <div class="stack-img stack-2"><img src="IMG_3145.jpg" alt="Samridhi"></div>
+      <div class="stack-img stack-3"><img src="IMG_3146.jpg" alt="Samridhi"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Samridhi Pratap ✦</div>
+  <div class="footer-tagline">Bold energy. Beautiful chaos. Always herself.</div>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/samridhipratapp?igsh=OHNtNXVqdDloenN2" target="_blank" class="footer-link">Instagram</a>
+    <a href="#gallery" class="footer-link">Gallery</a>
+    <a href="#about" class="footer-link">About</a>
+    <a href="#support" class="footer-link">Support</a>
+  </div>
+  <div class="footer-bottom">Made with 🌸 by fans, for fans · @samridhipratapp</div>
+</footer>
+
+<script>
+// Custom cursor
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; });
+function animRing() {
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) *.12;
+  ring.style.left = rx + 'px';
+  ring.style.top = ry + 'px';
+  requestAnimationFrame(animRing);
+}
+animRing();
+
+// Petals
+const container = document.getElementById('petals');
+for (let i = 0; i < 18; i++) {
+  const p = document.createElement('div');
+  p.className = 'petal';
+  p.style.cssText = `
+    left: ${Math.random() * 100}vw;
+    animation-duration: ${8 + Math.random() * 12}s;
+    animation-delay: ${Math.random() * 10}s;
+    opacity: 0;
+    transform: scale(${0.5 + Math.random()});
+    background: ${['#e8738a','#f5c2ce','#c9a96e'][Math.floor(Math.random()*3)]};
+  `;
+  container.appendChild(p);
+}
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(r => obs.observe(r));
+
+// Counter animation
+const counters = document.querySelectorAll('[data-target]');
+const cObs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = +el.dataset.target;
+      let current = 0;
+      const step = target / 60;
+      const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = Math.round(current) + (target >= 100 ? '%' : target >= 10 && target < 100 ? 'K+' : '+');
+        if (current >= target) clearInterval(timer);
+      }, 25);
+      cObs.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+counters.forEach(c => cObs.observe(c));
+
+// Fix counter labels
+counters.forEach(c => {
+  const t = +c.dataset.target;
+  if (t === 10) c.dataset.suffix = 'K+';
+  else if (t === 100) c.dataset.suffix = '%';
+  else c.dataset.suffix = '+';
+});
+
+function handleDM() {
+  window.open('https://www.instagram.com/samridhipratapp?igsh=OHNtNXVqdDloenN2', '_blank');
+}
+
+function handleShare() {
+  if (navigator.share) {
+    navigator.share({ title: 'Samridhi Pratap Fan Page', url: window.location.href });
+  } else {
+    navigator.clipboard.writeText(window.location.href).then(() => alert('Page link copied! Share it with friends 🌸'));
+  }
+}
+</script>
+</body>
+</html>
